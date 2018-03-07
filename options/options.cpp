@@ -3,7 +3,7 @@
 #include <QComboBox>
 #include <QVBoxLayout>
 #include <QTranslator>
-#include "options.h"
+#include "options/options.h"
 #include <QEvent>
 #include <QMessageBox>
 #include <QFile>
@@ -16,7 +16,7 @@ Options::Options(QWidget *parent) : QWidget(parent)
 	translateUi();
 	createConnections();
 	createStyleSheet();
-	qTranslator->load("C:\\Users\\Przemysław\\Desktop\\Gry\\Options\\en_EN.qm");
+    qTranslator->load(":/languages/english");
 }
 
 void Options::createWidgets()
@@ -60,7 +60,7 @@ void Options::createLayout()
 void Options::translateUi()
 {
 	m_TitleLabel->setText( tr("Game Options") );
-	m_LanguagesLabel->setText( tr("Languages:") );
+    m_LanguagesLabel->setText( tr("Languages:") );
 	
 	
     m_ChangeLangComboBox->setItemText(0, tr("English") );
@@ -94,6 +94,7 @@ void Options::changeEvent(QEvent *e)
 void Options::createConnections()
 {
 	connect(m_ChangeLangComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setCurrentLanguage(int)));
+    connect(m_BackButton, SIGNAL(clicked(bool)), this, SLOT(goBack()));
 }
 
 void Options::setCurrentLanguage(int choice_)
@@ -101,16 +102,16 @@ void Options::setCurrentLanguage(int choice_)
 	
 	    switch (choice_) {
     case 0:
-        qTranslator->load("C:\\Users\\Przemysław\\Desktop\\Gry\\Options\\en_EN.qm");
+        qTranslator->load(":/languages/english");
 		break;
     case 1:
-        qTranslator->load("C:\\Users\\Przemysław\\Desktop\\Gry\\Options\\pl_PL.qm");
+        qTranslator->load(":/languages/polish");
         break;
     case 2:
-        qTranslator->load("C:\\Users\\Przemysław\\Desktop\\Gry\\Options\\ger_GER");
+        qTranslator->load(":/languages/germany");
         break;
     case 3:
-		qTranslator->load("C:\\Users\\Przemysław\\Desktop\\Gry\\Options\\rus_RUS");
+        qTranslator->load(":/languages/russian");
 		break;
     }
 }
@@ -118,7 +119,9 @@ void Options::setCurrentLanguage(int choice_)
 void Options::createStyleSheet()
 {
 	setStyleSheet("QPushButton{background-color: #13100a; border-style: solid;  border-width: 1px; border-radius: 10px; color: white; font-size: 20px; font-family: 'Arial'; font-weight: 500px;} QPushButton:hover{background-color: #24211b;}");
-	m_TitleLabel->setStyleSheet("font-size: 40px; font-weight: 800");
+    m_TitleLabel->setStyleSheet("font-size: 25px; font-weight: 800");
+    m_TitleLabel->setAlignment(Qt::AlignCenter);
+    m_LanguagesLabel->setStyleSheet("font: italic 12pt \"Cambria\" ");
 	m_ChangeLangComboBox->setStyleSheet("background-color: black; color: red; font: italic 12pt \"Cambria\" ");
 	m_WLabel->setStyleSheet("font: italic 12pt \"Cambria\" ");
 	m_DLabel->setStyleSheet("font: italic 12pt \"Cambria\" ");
@@ -126,4 +129,10 @@ void Options::createStyleSheet()
 	m_ALabel->setStyleSheet("font: italic 12pt \"Cambria\" ");
 	m_PLabel->setStyleSheet("font: italic 12pt \"Cambria\" ");
 	m_SpaceLabel->setStyleSheet("font: italic 12pt \"Cambria\" ");
+    m_BackButton->setCursor(Qt::PointingHandCursor);
+}
+
+void Options::goBack()
+{
+    emit backtomenuClicked();
 }

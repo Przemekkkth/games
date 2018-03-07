@@ -118,6 +118,7 @@
     </message>
     <message>
         <location filename="options.ui" line="42"/>
+        <location filename="options.cpp" line="56"/>
         <source>Options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -148,36 +149,43 @@
     </message>
     <message>
         <location filename="options.ui" line="94"/>
+        <location filename="options.cpp" line="63"/>
         <source>1. W - up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="options.ui" line="104"/>
+        <location filename="options.cpp" line="64"/>
         <source>2. D - right</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="options.ui" line="114"/>
+        <location filename="options.cpp" line="65"/>
         <source>3. S - down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="options.ui" line="124"/>
+        <location filename="options.cpp" line="66"/>
         <source>4. A - left</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="options.ui" line="134"/>
+        <location filename="options.cpp" line="67"/>
         <source>5. P - pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="options.ui" line="144"/>
+        <location filename="options.cpp" line="68"/>
         <source>6. Space - start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="options.ui" line="154"/>
+        <location filename="options.cpp" line="70"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>

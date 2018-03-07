@@ -5,7 +5,7 @@
 #include "tictactoe/tictactoewindow.h"
 #include "breakout/breakout.h"
 #include "gamemenu.h"
-#include "options.h"
+#include "options/options.h"
 #include <QStackedWidget>
 #include <QLayout>
 #include <QMessageBox>
@@ -77,6 +77,8 @@ void Game::createConnections()
     connect(m_breakout, SIGNAL(exitClicked()), this, SLOT(setGameMenuContent()));
 
     connect(m_options, SIGNAL(backtomenuClicked()), this, SLOT(setThemeContent()));
+
+    connect(m_tictactoe, SIGNAL(backtomenuClicked()), this, SLOT(setThemeContent()));
 }
 
 void Game::setGameMenuContent()

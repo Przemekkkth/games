@@ -29,7 +29,7 @@ SOURCES += main.cpp\
     tictactoe/configurationdialog.cpp \
     tictactoe/tictactoe.cpp \
     tictactoe/tictactoewindow.cpp \
-    options.cpp
+    options/options.cpp
 
 HEADERS  += \
     theme.h \
@@ -44,12 +44,11 @@ HEADERS  += \
     tictactoe/configurationdialog.h \
     tictactoe/tictactoe.h \
     tictactoe/tictactoewindow.h \
-    options.h
+    options/options.h
 
 FORMS += \
     configurationdialog.ui \
-    tictactoe.ui \
-    options.ui
+    tictactoe.ui
 
 RESOURCES += \
     images.qrc

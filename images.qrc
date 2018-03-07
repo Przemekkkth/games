@@ -7,4 +7,10 @@
         <file alias="head">images/head.png</file>
         <file alias="paddle">images/paddle.png</file>
     </qresource>
+    <qresource prefix="/languages">
+        <file alias="english">languages/en_EN.qm</file>
+        <file alias="germany">languages/ger_GER.qm</file>
+        <file alias="polish">languages/pl_PL.qm</file>
+        <file alias="russian">languages/rus_RUS.qm</file>
+    </qresource>
 </RCC>

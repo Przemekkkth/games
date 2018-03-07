@@ -23,6 +23,9 @@ public slots:
 private slots:
     void updateNameLabels();
     void handleGameOver(TicTacToe::Player);
+    void goBack();
+signals:
+    void backtomenuClicked();
 };
 
 #endif // MAINWINDOW_H

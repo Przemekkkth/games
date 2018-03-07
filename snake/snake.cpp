@@ -73,7 +73,8 @@ void Snake::doDrawing()
 
     QPainter qp(this);
     qp.setBrush(QBrush(Qt::black));
-    qp.drawRect(rect());
+    qp.drawRect(-10, -10 , rect().width() + 10, rect().height() + 10);
+
     if(inGame)
     {
         qp.drawImage(apple_x, apple_y , apple);

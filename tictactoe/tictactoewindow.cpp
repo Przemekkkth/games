@@ -23,7 +23,7 @@ TictactoeWindow::TictactoeWindow(QWidget *parent) :
     setCentralWidget(mainWidget);
 
     connect(ui->actionNewGame, SIGNAL(triggered(bool)), this, SLOT(startNewGame()));
-    connect(ui->actionQuit, SIGNAL(triggered(bool)), qApp, SLOT(quit()));
+    connect(ui->actionQuit, SIGNAL(triggered(bool)), this, SLOT(goBack()));
     connect(ui->gameBoard, SIGNAL(currentPlayerChanged(TicTacToe::Player)),
     this, SLOT(updateNameLabels()));
     connect(ui->gameBoard, SIGNAL(gameOver(TicTacToe::Player)), this, SLOT(handleGameOver(TicTacToe::Player)));
@@ -74,4 +74,9 @@ void TictactoeWindow::handleGameOver(TicTacToe::Player winner)
         message = QString("%1 wins").arg(winner == TicTacToe::Player1 ? ui->player1->text() : ui->player2->text());
     }
     QMessageBox::information(this, "Info", message);
+}
+
+void TictactoeWindow::goBack()
+{
+    emit backtomenuClicked();
 }

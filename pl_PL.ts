@@ -118,6 +118,7 @@
     </message>
     <message>
         <location filename="options.ui" line="42"/>
+        <location filename="options.cpp" line="56"/>
         <source>Options</source>
         <translation>Opcje</translation>
     </message>
@@ -148,36 +149,43 @@
     </message>
     <message>
         <location filename="options.ui" line="94"/>
+        <location filename="options.cpp" line="63"/>
         <source>1. W - up</source>
         <translation>1.W - góra</translation>
     </message>
     <message>
         <location filename="options.ui" line="104"/>
+        <location filename="options.cpp" line="64"/>
         <source>2. D - right</source>
         <translation>2.D - prawo</translation>
     </message>
     <message>
         <location filename="options.ui" line="114"/>
+        <location filename="options.cpp" line="65"/>
         <source>3. S - down</source>
         <translation>3. S - dół</translation>
     </message>
     <message>
         <location filename="options.ui" line="124"/>
+        <location filename="options.cpp" line="66"/>
         <source>4. A - left</source>
         <translation>4. A - lewo</translation>
     </message>
     <message>
         <location filename="options.ui" line="134"/>
+        <location filename="options.cpp" line="67"/>
         <source>5. P - pause</source>
         <translation>5. P - pauza</translation>
     </message>
     <message>
         <location filename="options.ui" line="144"/>
+        <location filename="options.cpp" line="68"/>
         <source>6. Space - start</source>
         <translation>6. Spacja - start</translation>
     </message>
     <message>
         <location filename="options.ui" line="154"/>
+        <location filename="options.cpp" line="70"/>
         <source>Back</source>
         <translation>Powrót</translation>
     </message>

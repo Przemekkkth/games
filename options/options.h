@@ -24,8 +24,11 @@ private:
 protected:
     void changeEvent(QEvent*);
 private slots:
-	
 	void setCurrentLanguage(int);
+    void goBack();
+signals:
+    void backtomenuClicked();
+
 };
 
 #endif // THEME_H
