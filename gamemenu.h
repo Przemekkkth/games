@@ -28,7 +28,7 @@ private:
                 *m_BackToMenuButton;
 
     void createConnections();
-
+    void translateUi();
 
 };
 

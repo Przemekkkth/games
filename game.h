@@ -23,25 +23,19 @@ public:
 
 private:
     Theme *m_theme;
-    //1) m_Theme
     Snake *m_snake;
-    //2) m_Snake
     TictactoeWindow *m_tictactoe;
-    //3) tictactoe
     Breakout *m_breakout;
-    //4) Breakout
     GameMenu *m_gameMenu;
-    //5) game menu
     Options *m_options;
-    //6) options
-
-    //Kontener
     QStackedWidget *m_mainContent;
 
 
     void createWidgets();
     void createConnections();
-
+    void translateUi();
+    void createContainer();
+    void createLayout();
 
 private slots:
     void setGameMenuContent();

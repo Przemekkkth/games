@@ -16,50 +16,30 @@ Game::Game(QWidget *parent)
 
     createWidgets();
     createConnections();
-
+    createContainer();
+    createLayout();
 }
 
 
 void Game::createWidgets()
 {
     m_mainContent = new QStackedWidget;
-
-
     m_theme = new Theme;
-
     m_snake = new Snake;
-
-    //2) m_Snake
     m_tictactoe = new TictactoeWindow;
-    //3) tictactoe
     m_breakout = new Breakout;
-    //4) Breakout
     m_gameMenu = new GameMenu;
-    //5) GameMenu
     m_options = new Options;
-    //6) Options
+
+
     m_mainContent->setStyleSheet("QLabel{color: red;}"
                                  "QMessageBox{color: black;}");
 
-    m_mainContent->addWidget(m_theme);
 
-    m_mainContent->addWidget(m_gameMenu);
-
-    m_mainContent->addWidget(m_breakout);
-
-    m_mainContent->addWidget(m_snake);
-
-    m_mainContent->addWidget(m_tictactoe);
-
-    m_mainContent->addWidget(m_options);
     resize(WIDTH, HEIGHT);
 
 
 
-    QVBoxLayout *layout = new QVBoxLayout(this);
-    layout->addWidget(m_mainContent);
-    layout->setMargin(0);
-    setLayout(layout);
 }
 
 void Game::createConnections()
@@ -119,4 +99,28 @@ void Game::paintEvent(QPaintEvent*)
 void Game::setOptionsContent()
 {
     m_mainContent->setCurrentIndex(5);
+}
+
+
+void Game::createContainer()
+{
+    m_mainContent->addWidget(m_theme);
+
+    m_mainContent->addWidget(m_gameMenu);
+
+    m_mainContent->addWidget(m_breakout);
+
+    m_mainContent->addWidget(m_snake);
+
+    m_mainContent->addWidget(m_tictactoe);
+
+    m_mainContent->addWidget(m_options);
+}
+
+void Game::createLayout()
+{
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->addWidget(m_mainContent);
+    layout->setMargin(0);
+    setLayout(layout);
 }

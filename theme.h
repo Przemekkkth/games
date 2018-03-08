@@ -25,6 +25,9 @@ private:
     QPushButton *m_quitButton;
 
     void createConnections();
+    void createWidgets();
+    void createLayout();
+    void createStyleSheet();
 };
 
 #endif // THEME_H
