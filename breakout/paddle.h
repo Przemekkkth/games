@@ -9,12 +9,12 @@ class Paddle
 public:
     Paddle();
     ~Paddle();
-public:
-    void resetState();
-    void move();
-    void setDx(int);
-    QRect getRect();
     QImage& getImage();
+    QRect getRect();
+    void move();
+    void resetState();
+    void setDx(int);
+
 private:
     QImage image;
     QRect rect;

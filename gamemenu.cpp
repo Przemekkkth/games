@@ -3,45 +3,12 @@
 #include <QVBoxLayout>
 GameMenu::GameMenu(QWidget *parent) : QWidget(parent)
 {
-    setStyleSheet("QWidget{background-color: black;}"
-                  "QPushButton{background-color: #13100a; border-style: solid;  border-width: 1px; border-radius: 10px; color: white; font-size: 20px; font-family: \'Arial\'; font-weight: 500px;}"
-                  "QPushButton:hover{background-color: #24211b;}");
 
-
-
-    m_TicTacToeButton = new QPushButton();
-    m_TicTacToeButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_TicTacToeButton->setCursor(QCursor(Qt::PointingHandCursor));
-    m_TicTacToeButton->setDefault(false);
-    m_TicTacToeButton->setAutoDefault(false);
-
-
-    m_ArcanoidButton = new QPushButton();
-    m_ArcanoidButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_ArcanoidButton->setCursor(QCursor(Qt::PointingHandCursor));
-    m_ArcanoidButton->setDefault(false);
-    m_ArcanoidButton->setAutoDefault(false);
-
-    m_SnakeButton = new QPushButton();
-    m_SnakeButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_SnakeButton->setCursor(QCursor(Qt::PointingHandCursor));
-    m_SnakeButton->setDefault(false);
-    m_SnakeButton->setAutoDefault(false);
-
-    m_BackToMenuButton = new QPushButton();
-    m_BackToMenuButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    m_BackToMenuButton->setCursor(QCursor(Qt::PointingHandCursor));
-
+    createWidgets();
     translateUi();
     createConnections();
-
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->addWidget(m_TicTacToeButton);
-    layout->addWidget(m_ArcanoidButton);
-    layout->addWidget(m_SnakeButton);
-    layout->addWidget(m_BackToMenuButton);
-
-    setLayout(layout);
+    createLayout();
+    createStyleSheet();
 }
 
 
@@ -80,4 +47,48 @@ void GameMenu::translateUi()
     m_ArcanoidButton->setText(tr("Arcanoid"));
     m_SnakeButton->setText(tr("Snake"));
     m_BackToMenuButton->setText(tr("Back"));
+}
+
+void GameMenu::createWidgets()
+{
+    m_TicTacToeButton = new QPushButton();
+    m_TicTacToeButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_TicTacToeButton->setCursor(QCursor(Qt::PointingHandCursor));
+    m_TicTacToeButton->setDefault(false);
+    m_TicTacToeButton->setAutoDefault(false);
+
+
+    m_ArcanoidButton = new QPushButton();
+    m_ArcanoidButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_ArcanoidButton->setCursor(QCursor(Qt::PointingHandCursor));
+    m_ArcanoidButton->setDefault(false);
+    m_ArcanoidButton->setAutoDefault(false);
+
+    m_SnakeButton = new QPushButton();
+    m_SnakeButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_SnakeButton->setCursor(QCursor(Qt::PointingHandCursor));
+    m_SnakeButton->setDefault(false);
+    m_SnakeButton->setAutoDefault(false);
+
+    m_BackToMenuButton = new QPushButton();
+    m_BackToMenuButton->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    m_BackToMenuButton->setCursor(QCursor(Qt::PointingHandCursor));
+
+}
+
+void GameMenu::createLayout()
+{
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(m_TicTacToeButton);
+    layout->addWidget(m_ArcanoidButton);
+    layout->addWidget(m_SnakeButton);
+    layout->addWidget(m_BackToMenuButton);
+    setLayout(layout);
+}
+
+void GameMenu::createStyleSheet()
+{
+    setStyleSheet("QWidget{background-color: black;}"
+                  "QPushButton{background-color: #13100a; border-style: solid;  border-width: 1px; border-radius: 10px; color: white; font-size: 20px; font-family: \'Arial\'; font-weight: 500px;}"
+                  "QPushButton:hover{background-color: #24211b;}");
 }

@@ -13,12 +13,7 @@ public:
 signals:
     void startClicked();
     void optionsClicked();
-    void quitClicked();
 
-private slots:
-    void gameStarted();
-    void optionsStarted();
-    void quitStarted();
 private:
     QPushButton *m_startButton;
     QPushButton *m_optionsButton;
@@ -28,6 +23,7 @@ private:
     void createWidgets();
     void createLayout();
     void createStyleSheet();
+    void translateUi();
 };
 
 #endif // THEME_H

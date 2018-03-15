@@ -28,6 +28,9 @@ private:
                 *m_BackToMenuButton;
 
     void createConnections();
+    void createWidgets();
+    void createLayout();
+    void createStyleSheet();
     void translateUi();
 
 };

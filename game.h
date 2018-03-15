@@ -36,7 +36,7 @@ private:
     void translateUi();
     void createContainer();
     void createLayout();
-
+    void createStyleSheet();
 private slots:
     void setGameMenuContent();
     void setSnakeContent();

@@ -1,10 +1,11 @@
 #ifndef BREAKOUT_H
 #define BREAKOUT_H
 
-#include <QWidget>
 #include <QKeyEvent>
-#include <QPushButton>
 #include <QLabel>
+#include <QPushButton>
+#include <QWidget>
+
 #include "ball.h"
 #include "brick.h"
 #include "paddle.h"
@@ -16,28 +17,23 @@ class Breakout : public QWidget
 public:
     explicit Breakout(QWidget *parent = 0);
     ~Breakout();
-public:
     void setGame();
 
-signals:
-
-public slots:
-
 protected:
-    void paintEvent(QPaintEvent*);
-    void timerEvent(QTimerEvent*);
-    void keyPressEvent(QKeyEvent*);
-    void keyReleaseEvent(QKeyEvent*);
     void drawObjects(QPainter*);
     void finishGame(QPainter*, QString);
+    void keyPressEvent(QKeyEvent*);
+    void keyReleaseEvent(QKeyEvent*);
+    void paintEvent(QPaintEvent*);
     void moveObjects();
+    void timerEvent(QTimerEvent*);
 
-    void startGame();
+    void checkCollision();
     void pauseGame();
+    void startGame();
     void stopGame();
     void victory();
-    void checkCollision();
-
+//nizeje jest nieposortowane
 private:
     int x;
     int timerId;
@@ -57,8 +53,10 @@ private:
     QPushButton *m_exitButton;
     QLabel *m_pointsLabel;
     void initGame();
+
 signals:
     void exitClicked();
+
 private slots:
     void exitGame();
     void againGame();

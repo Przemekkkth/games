@@ -15,9 +15,10 @@ Game::Game(QWidget *parent)
 {
 
     createWidgets();
+    createLayout();
     createConnections();
     createContainer();
-    createLayout();
+    createStyleSheet();
 }
 
 
@@ -30,16 +31,6 @@ void Game::createWidgets()
     m_breakout = new Breakout;
     m_gameMenu = new GameMenu;
     m_options = new Options;
-
-
-    m_mainContent->setStyleSheet("QLabel{color: red;}"
-                                 "QMessageBox{color: black;}");
-
-
-    resize(WIDTH, HEIGHT);
-
-
-
 }
 
 void Game::createConnections()
@@ -123,4 +114,11 @@ void Game::createLayout()
     layout->addWidget(m_mainContent);
     layout->setMargin(0);
     setLayout(layout);
+}
+
+void Game::createStyleSheet()
+{
+    m_mainContent->setStyleSheet("QLabel{color: red;}"
+                                 "QMessageBox{color: black;}");
+    resize(WIDTH, HEIGHT);
 }

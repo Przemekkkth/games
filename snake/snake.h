@@ -1,16 +1,14 @@
 #ifndef SNAKE_H
 #define SNAKE_H
 
-#include "globalsettings.h"
-
-#include <QWidget>
-#include <QPaintEvent>
-#include <QTimerEvent>
 #include <QKeyEvent>
-#include <QPushButton>
 #include <QLabel>
+#include <QPaintEvent>
+#include <QPushButton>
+#include <QTimerEvent>
+#include <QWidget>
 
-
+#include "globalsettings.h"
 
 class Snake : public QWidget
 {
@@ -74,8 +72,9 @@ private:
 signals:
     void exitClicked();
 private slots:
-    void exitGame();
     void againGame();
+    void exitGame();
+
 };
 
 #endif // SNAKE_H

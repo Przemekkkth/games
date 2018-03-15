@@ -10,11 +10,12 @@ public:
     Brick(int , int);
     ~Brick();
 public:
-    bool isDestroyed();
-    void setDestroyed(bool);
-    QRect getRect();
-    void setRect(QRect);
     QImage& getImage();
+    QRect getRect();
+    bool isDestroyed();
+    void setDestroyed(bool);    
+    void setRect(QRect);
+
 private:
     QImage image;
     QRect rect;

@@ -2,15 +2,17 @@
 #define OPTIONS_H
 
 #include <QWidget>
+
+class QComboBox;
 class QLabel;
 class QPushButton;
-class QComboBox;
 
 class Options : public QWidget
 {
     Q_OBJECT
 public:
     explicit Options(QWidget *parent = 0);
+    //nizej nalezy posortowac
 private:
 	void createWidgets();
 	void createLayout();
