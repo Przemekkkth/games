@@ -51,7 +51,7 @@ void Snake::initGame()
     upDirection = false;
     downDirection = false;
     dots = 3;
-    m_pointsLabel->setText(tr("Punkty : ")+QString::number((dots-3)*10));
+    m_pointsLabel->setText(tr("Points : ")+QString::number((dots-3)*10));
     for(int z = 0; z < dots; z++)
     {
         x[z] = 50 - z * 10;
@@ -233,7 +233,7 @@ void Snake::checkCollision()
             inGame = false;
         }
     }
-    m_pointsLabel->setText(tr("Punkty : ")+QString::number((dots-3)*10));
+    m_pointsLabel->setText(tr("Points : ")+QString::number((dots-3)*10));
     if(x[0] > B_WIDTH)
     {
         inGame = false;

@@ -1,11 +1,12 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-#include "tictactoe.h"
 #include <QMainWindow>
+#include "tictactoe.h"
+class QLabel;
+class QWidget;
+class QMenu;
+class QAction;
 
-namespace Ui {
-class MainWindow;
-}
 
 class TictactoeWindow : public QMainWindow
 {
@@ -16,10 +17,22 @@ public:
     ~TictactoeWindow();
 
 private:
-    Ui::MainWindow *ui;
-public slots:
+    QLabel *m_player1Label;
+	QLabel *m_player2Label;
+	QWidget *m_mainWidget;
+    TicTacToe *m_tictactoeWidget;
+	QMenu *m_newMenu;
+	QAction *m_startAction;
+	QAction* m_quitAction;
+	
+	void createWidgets();
+	void createLayouts();
+    void createStyleSheets();
+    void createConnections();
+    void translateUi();
 
-    void startNewGame();
+public slots:
+	void startNewGame();
 private slots:
     void updateNameLabels();
     void handleGameOver(TicTacToe::Player);

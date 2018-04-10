@@ -6,11 +6,12 @@
         <file alias="dot">images/dot.png</file>
         <file alias="head">images/head.png</file>
         <file alias="paddle">images/paddle.png</file>
+        <file alias="icon">Settings-Button-300px.png</file>
     </qresource>
     <qresource prefix="/languages">
-        <file alias="english">languages/en_EN.qm</file>
-        <file alias="germany">languages/ger_GER.qm</file>
-        <file alias="polish">languages/pl_PL.qm</file>
-        <file alias="russian">languages/rus_RUS.qm</file>
+        <file>en_EN.qm</file>
+        <file>ger_GER.qm</file>
+        <file>pl_PL.qm</file>
+        <file>rus_RUS.qm</file>
     </qresource>
 </RCC>

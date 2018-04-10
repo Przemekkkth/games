@@ -10,7 +10,8 @@ class GameMenu : public QWidget
     Q_OBJECT
 public:
     explicit GameMenu(QWidget *parent = 0);
-
+protected:
+    void changeEvent(QEvent*);
 signals:
     void tictactoeClicked();
     void arcanoidClicked();

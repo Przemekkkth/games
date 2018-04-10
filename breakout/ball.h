@@ -18,10 +18,10 @@ public:
     QRect getRect();
     QImage& getImage();
 private:
-    int xdir;
-    int ydir;
-    QImage image;
-    QRect rect;
+    int m_xdir;
+    int m_ydir;
+    QImage m_image;
+    QRect m_rect;
     static const int INITIAL_X = (WIDTH/2)-30;//230 77% WIDTH
     static const int INITIAL_Y = (0.9*HEIGHT) - 10.;//350 90% HEIGHT - 10(wysokość piłki)
     static const int RIGHT_EDGE = WIDTH;//300 100% WIDTH

@@ -1,6 +1,11 @@
 #include "gamemenu.h"
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QTranslator>
+#include <QEvent>
+
+extern QTranslator *qTranslator;
+
 GameMenu::GameMenu(QWidget *parent) : QWidget(parent)
 {
 
@@ -91,4 +96,16 @@ void GameMenu::createStyleSheet()
     setStyleSheet("QWidget{background-color: black;}"
                   "QPushButton{background-color: #13100a; border-style: solid;  border-width: 1px; border-radius: 10px; color: white; font-size: 20px; font-family: \'Arial\'; font-weight: 500px;}"
                   "QPushButton:hover{background-color: #24211b;}");
+}
+
+void GameMenu::changeEvent(QEvent *e)
+{
+    if(e->type() == QEvent::LanguageChange )
+    {
+        translateUi();
+    }
+    else
+    {
+        QWidget::changeEvent(e);
+    }
 }

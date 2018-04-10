@@ -46,9 +46,7 @@ HEADERS  += \
     tictactoe/tictactoewindow.h \
     options/options.h
 
-FORMS += \
-    configurationdialog.ui \
-    tictactoe.ui
+FORMS +=
 
 RESOURCES += \
     images.qrc

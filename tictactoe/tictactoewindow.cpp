@@ -1,38 +1,74 @@
-#include "tictactoe/tictactoewindow.h"
-#include "ui_tictactoe.h"
+#include "tictactoewindow.h"
 #include "configurationdialog.h"
-#include "globalsettings.h"
 #include <QVBoxLayout>
 #include <QMessageBox>
+#include <QMenuBar>
+#include <QLabel>
+#include <QWidget>
+#include <QMenu>
+#include <QAction>
+
 
 TictactoeWindow::TictactoeWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    QMainWindow(parent)
 {
-    ui->setupUi(this);
-    QWidget *mainWidget = new QWidget(this);
+	createWidgets();
+	createLayouts();
+	translateUi();
+    createStyleSheets();
+    createConnections();
+    m_tictactoeWidget->setEnabled(false);
+}
+
+void TictactoeWindow::createWidgets()
+{
+	m_player1Label = new QLabel;
+	m_player2Label = new QLabel;
+    m_mainWidget = new QWidget(this);
+
+    m_tictactoeWidget = new TicTacToe;
+    m_newMenu = new QMenu();
+    m_startAction = new QAction(0);
+    m_quitAction = new QAction(0);
+}
+	
+void TictactoeWindow::createLayouts()
+{
+    m_newMenu = menuBar()->addMenu("");
+    m_newMenu->addAction(m_startAction);
+    m_newMenu->addAction(m_quitAction);
+
+
     QVBoxLayout *vlayout = new QVBoxLayout;
-    vlayout->addWidget(ui->player1);
-    vlayout->addWidget(ui->gameBoard);
-    vlayout->addWidget(ui->player2);
+    vlayout->addWidget(m_player1Label,0,Qt::AlignTop);
+    vlayout->addWidget(m_tictactoeWidget);
+    vlayout->addWidget(m_player2Label,0,Qt::AlignBottom);
 
+
+
+    m_mainWidget->setLayout(vlayout);
+    resize(333, 333);
+    setCentralWidget(m_mainWidget);
+}
+
+void TictactoeWindow::translateUi()
+{
+    m_newMenu->setTitle(tr("New"));
+    m_startAction->setText(tr("Start"));
+    m_quitAction->setText(tr("Quit"));
+    m_player1Label->setText(tr("player1"));
+    m_player2Label->setText(tr("player2"));
+}
+
+void TictactoeWindow::createStyleSheets()
+{
     setStyleSheet("QMessageBox{color: black;}");
-
-    mainWidget->setLayout(vlayout);
-    resize(WIDTH, HEIGHT);
-    setCentralWidget(mainWidget);
-
-    connect(ui->actionNewGame, SIGNAL(triggered(bool)), this, SLOT(startNewGame()));
-    connect(ui->actionQuit, SIGNAL(triggered(bool)), this, SLOT(goBack()));
-    connect(ui->gameBoard, SIGNAL(currentPlayerChanged(TicTacToe::Player)),
-    this, SLOT(updateNameLabels()));
-    connect(ui->gameBoard, SIGNAL(gameOver(TicTacToe::Player)), this, SLOT(handleGameOver(TicTacToe::Player)));
-    ui->gameBoard->setEnabled(false);
+    m_mainWidget->setStyleSheet("QMessageBox{color: black;}");
 }
 
 TictactoeWindow::~TictactoeWindow()
 {
-    delete ui;
+    
 }
 
 void TictactoeWindow::startNewGame()
@@ -44,26 +80,25 @@ void TictactoeWindow::startNewGame()
         return;
     }
 
-    ui->player1->setText(dlg.player1Name());
-    ui->player2->setText(dlg.player2Name());
-    ui->gameBoard->initNewGame();
-    ui->gameBoard->setEnabled(true);
-
+    m_player1Label->setText(dlg.player1Name());
+    m_player2Label->setText(dlg.player2Name());
+    m_tictactoeWidget->initNewGame();
+    m_tictactoeWidget->setEnabled(true);
 }
 
 void TictactoeWindow::updateNameLabels() {
-    QFont f = ui->player1->font();
-    f.setBold(ui->gameBoard->currentPlayer() ==
+    QFont f = m_player1Label->font();
+    f.setBold(m_tictactoeWidget->currentPlayer() ==
     TicTacToe::Player1);
-    ui->player1->setFont(f);
-    f.setBold(ui->gameBoard->currentPlayer() ==
+    m_player1Label->setFont(f);
+    f.setBold(m_tictactoeWidget->currentPlayer() ==
     TicTacToe::Player2);
-    ui->player2->setFont(f);
+    m_player2Label->setFont(f);
 }
 
 void TictactoeWindow::handleGameOver(TicTacToe::Player winner)
 {
-    ui->gameBoard->setEnabled(false);
+    m_tictactoeWidget->setEnabled(false);
     QString message;
     if(winner == TicTacToe::Draw)
     {
@@ -71,7 +106,7 @@ void TictactoeWindow::handleGameOver(TicTacToe::Player winner)
     }
     else
     {
-        message = QString("%1 wins").arg(winner == TicTacToe::Player1 ? ui->player1->text() : ui->player2->text());
+        message = QString("%1 wins").arg(winner == TicTacToe::Player1 ? m_player1Label->text() : m_player2Label->text());
     }
     QMessageBox::information(this, "Info", message);
 }
@@ -79,4 +114,13 @@ void TictactoeWindow::handleGameOver(TicTacToe::Player winner)
 void TictactoeWindow::goBack()
 {
     emit backtomenuClicked();
+}
+void TictactoeWindow::createConnections()
+{
+    connect(m_startAction, SIGNAL(triggered(bool)), this, SLOT(startNewGame()));
+    connect(m_quitAction, SIGNAL(triggered(bool)), this, SLOT(goBack()));
+    connect(m_tictactoeWidget, SIGNAL(currentPlayerChanged(TicTacToe::Player)),
+    this, SLOT(updateNameLabels()));
+    connect(m_tictactoeWidget, SIGNAL(gameOver(TicTacToe::Player)), this, SLOT(handleGameOver(TicTacToe::Player)));
+
 }

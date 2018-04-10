@@ -8,7 +8,7 @@
 #include <QMessageBox>
 #include <QFile>
 extern QTranslator *qTranslator;
-
+extern QPair<int, QTranslator*> language;
 Options::Options(QWidget *parent) : QWidget(parent)
 {
 	createWidgets();
@@ -16,7 +16,8 @@ Options::Options(QWidget *parent) : QWidget(parent)
 	translateUi();
 	createConnections();
 	createStyleSheet();
-    qTranslator->load(":/languages/english");
+
+    language.second->load(":/languages/english");
 }
 
 void Options::createWidgets()
@@ -80,7 +81,6 @@ void Options::translateUi()
 
 void Options::changeEvent(QEvent *e)
 {
-
     if(e->type() == QEvent::LanguageChange )
     {
         translateUi();
@@ -102,16 +102,24 @@ void Options::setCurrentLanguage(int choice_)
 	
 	    switch (choice_) {
     case 0:
-        qTranslator->load(":/languages/english");
+        language.first = 0;
+        language.second->load(":/languages/en_EN.qm");
+        //language.second->load("C:\\FolderQt\\gamesV01\\games\\en_EN.qm");
 		break;
     case 1:
-        qTranslator->load(":/languages/polish");
+        language.first = 1;
+        language.second->load(":/languages/pl_PL.qm");
+        //language.second->load("C:\\FolderQt\\gamesV01\\games\\pl_PL.qm");
         break;
     case 2:
-        qTranslator->load(":/languages/germany");
+        language.first = 2;
+        language.second->load(":/languages/ger_GER.qm");
+        //language.second->load("C:\\FolderQt\\gamesV01\\games\\ger_GER.qm");
         break;
     case 3:
-        qTranslator->load(":/languages/russian");
+        language.first = 3;
+        language.second->load(":/languages/rus_RUS.qm");
+        //language.second->load("C:\\FolderQt\\gamesV01\\games\\rus_RUS.qm");
 		break;
     }
 }

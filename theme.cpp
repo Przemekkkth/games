@@ -3,7 +3,10 @@
 #include <QVBoxLayout>
 #include <QPushButton>
 #include <QApplication>
+#include <QTranslator>
+#include <QDebug>
 
+extern QTranslator *qTranslator;
 Theme::Theme(QWidget *parent) : QWidget(parent)
 {
 
@@ -77,4 +80,16 @@ void Theme::translateUi()
     m_startButton->setText(tr("Strart"));
     m_optionsButton->setText(tr("Options"));
     m_quitButton->setText(tr("Quit"));
+}
+
+void Theme::changeEvent(QEvent *e)
+{
+    if(e->type() == QEvent::LanguageChange )
+    {
+        translateUi();
+    }
+    else
+    {
+        QWidget::changeEvent(e);
+    }
 }

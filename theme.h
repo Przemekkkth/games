@@ -13,7 +13,8 @@ public:
 signals:
     void startClicked();
     void optionsClicked();
-
+protected:
+    void changeEvent(QEvent*);
 private:
     QPushButton *m_startButton;
     QPushButton *m_optionsButton;

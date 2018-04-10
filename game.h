@@ -37,6 +37,7 @@ private:
     void createContainer();
     void createLayout();
     void createStyleSheet();
+    void init();
 private slots:
     void setGameMenuContent();
     void setSnakeContent();

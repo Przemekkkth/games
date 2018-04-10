@@ -1,235 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="pl_PL">
 <context>
     <name>Breakout</name>
     <message>
         <location filename="breakout/breakout.cpp" line="68"/>
         <source>Do you want again?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы хотите снова?</translation>
     </message>
     <message>
         <location filename="breakout/breakout.cpp" line="297"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>да</translation>
     </message>
     <message>
         <location filename="breakout/breakout.cpp" line="305"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>нет</translation>
     </message>
 </context>
 <context>
     <name>ConfigurationDialog</name>
     <message>
-        <location filename="configurationdialog.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">диалог</translation>
     </message>
     <message>
-        <location filename="configurationdialog.ui" line="47"/>
         <source>Player1 Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Имя игрока1</translation>
     </message>
     <message>
-        <location filename="configurationdialog.ui" line="54"/>
         <source>Player2 Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Имя игрока2</translation>
+    </message>
+    <message>
+        <location filename="tictactoe/configurationdialog.cpp" line="84"/>
+        <source>Player1: </source>
+        <translation>Игрок 1:</translation>
+    </message>
+    <message>
+        <location filename="tictactoe/configurationdialog.cpp" line="85"/>
+        <source>Player2: </source>
+        <translation>Игрок 2: </translation>
+    </message>
+    <message>
+        <location filename="tictactoe/configurationdialog.cpp" line="86"/>
+        <source>OK</source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>GameMenu</name>
     <message>
-        <location filename="gamemenu.cpp" line="12"/>
+        <location filename="gamemenu.cpp" line="51"/>
         <source>TicTacToe</source>
-        <translation type="unfinished"></translation>
+        <translation>крестики-нолики</translation>
     </message>
     <message>
-        <location filename="gamemenu.cpp" line="19"/>
+        <location filename="gamemenu.cpp" line="52"/>
         <source>Arcanoid</source>
-        <translation type="unfinished"></translation>
+        <translation>арканоид</translation>
     </message>
     <message>
-        <location filename="gamemenu.cpp" line="25"/>
+        <location filename="gamemenu.cpp" line="53"/>
         <source>Snake</source>
-        <translation type="unfinished"></translation>
+        <translation>змея</translation>
     </message>
     <message>
-        <location filename="gamemenu.cpp" line="31"/>
+        <location filename="gamemenu.cpp" line="54"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>назад</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="tictactoe.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Главное окно</translation>
     </message>
     <message>
-        <location filename="tictactoe.ui" line="33"/>
-        <location filename="tictactoe.ui" line="46"/>
-        <source>*******</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="71"/>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">файл</translation>
     </message>
     <message>
-        <location filename="tictactoe.ui" line="81"/>
         <source>New Game</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Новая игра</translation>
     </message>
     <message>
-        <location filename="tictactoe.ui" line="84"/>
         <source>Start new game</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Начать новую игру</translation>
     </message>
     <message>
-        <location filename="tictactoe.ui" line="87"/>
-        <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <source>Back</source>
+        <translation type="vanished">назад</translation>
     </message>
     <message>
-        <location filename="tictactoe.ui" line="92"/>
-        <source>Quit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="95"/>
         <source>Exit the program</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="98"/>
-        <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Выход из программы</translation>
     </message>
 </context>
 <context>
     <name>Options</name>
     <message>
-        <location filename="options.ui" line="20"/>
-        <source>Form</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="63"/>
+        <source>Game Options</source>
+        <translation>Варианты игры</translation>
     </message>
     <message>
-        <location filename="options.ui" line="42"/>
-        <location filename="options.cpp" line="56"/>
-        <source>Options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="options.ui" line="55"/>
+        <location filename="options/options.cpp" line="64"/>
         <source>Languages:</source>
-        <translation type="unfinished"></translation>
+        <translation>Языки:</translation>
     </message>
     <message>
-        <location filename="options.ui" line="66"/>
-        <source>Polski</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="options.ui" line="71"/>
+        <location filename="options/options.cpp" line="67"/>
         <source>English</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="76"/>
-        <source>Deutche</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="68"/>
+        <source>Polski</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="81"/>
-        <source>Ruski</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="69"/>
+        <source>Deutsch</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="94"/>
-        <location filename="options.cpp" line="63"/>
-        <source>1. W - up</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="70"/>
+        <source>русский</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="104"/>
-        <location filename="options.cpp" line="64"/>
-        <source>2. D - right</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="72"/>
+        <source>1.W - up</source>
+        <translation>1.W - вверх</translation>
     </message>
     <message>
-        <location filename="options.ui" line="114"/>
-        <location filename="options.cpp" line="65"/>
-        <source>3. S - down</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="73"/>
+        <source>2.D - right</source>
+        <translation>2.D - правильно</translation>
     </message>
     <message>
-        <location filename="options.ui" line="124"/>
-        <location filename="options.cpp" line="66"/>
-        <source>4. A - left</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="74"/>
+        <source>3.S - down</source>
+        <translation>3.S-вниз</translation>
     </message>
     <message>
-        <location filename="options.ui" line="134"/>
-        <location filename="options.cpp" line="67"/>
-        <source>5. P - pause</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="75"/>
+        <source>4.A - left</source>
+        <translation>4.A - оставил</translation>
     </message>
     <message>
-        <location filename="options.ui" line="144"/>
-        <location filename="options.cpp" line="68"/>
-        <source>6. Space - start</source>
-        <translation type="unfinished"></translation>
+        <location filename="options/options.cpp" line="76"/>
+        <source>5.P - pause</source>
+        <translation>5. - Пауза</translation>
     </message>
     <message>
-        <location filename="options.ui" line="154"/>
-        <location filename="options.cpp" line="70"/>
+        <location filename="options/options.cpp" line="77"/>
+        <source>6.Space - start</source>
+        <translation>6.Space - Начало</translation>
+    </message>
+    <message>
+        <location filename="options/options.cpp" line="79"/>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>назад</translation>
     </message>
 </context>
 <context>
     <name>Snake</name>
     <message>
         <location filename="snake/snake.cpp" line="54"/>
-        <location filename="snake/snake.cpp" line="235"/>
-        <source>Punkty : </source>
-        <translation type="unfinished"></translation>
+        <location filename="snake/snake.cpp" line="236"/>
+        <source>Points : </source>
+        <oldsource>Punkty : </oldsource>
+        <translation>Точки : </translation>
     </message>
     <message>
-        <location filename="snake/snake.cpp" line="111"/>
+        <location filename="snake/snake.cpp" line="112"/>
         <source>Do you want again?</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы хотите снова?</translation>
     </message>
     <message>
-        <location filename="snake/snake.cpp" line="287"/>
+        <location filename="snake/snake.cpp" line="288"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>да</translation>
     </message>
     <message>
-        <location filename="snake/snake.cpp" line="296"/>
+        <location filename="snake/snake.cpp" line="297"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>нет</translation>
     </message>
 </context>
 <context>
     <name>Theme</name>
     <message>
-        <location filename="theme.cpp" line="14"/>
-        <source>Start</source>
-        <translation type="unfinished"></translation>
+        <location filename="theme.cpp" line="80"/>
+        <source>Strart</source>
+        <translation>Начало</translation>
     </message>
     <message>
-        <location filename="theme.cpp" line="20"/>
+        <location filename="theme.cpp" line="81"/>
         <source>Options</source>
-        <translation type="unfinished"></translation>
+        <translation>опции</translation>
     </message>
     <message>
-        <location filename="theme.cpp" line="26"/>
+        <location filename="theme.cpp" line="82"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>уволиться</translation>
+    </message>
+</context>
+<context>
+    <name>TictactoeWindow</name>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="56"/>
+        <source>New</source>
+        <translation>новый</translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="57"/>
+        <source>Start</source>
+        <translation>Начало</translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="58"/>
+        <source>Quit</source>
+        <translation>уволиться</translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="59"/>
+        <source>player1</source>
+        <translation>игрок 1</translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="60"/>
+        <source>player2</source>
+        <translation>игрок 2</translation>
     </message>
 </context>
 </TS>

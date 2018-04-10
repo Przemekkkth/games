@@ -10,6 +10,7 @@
 #include <QLayout>
 #include <QMessageBox>
 #include <QPainter>
+
 Game::Game(QWidget *parent)
     : QWidget(parent)
 {
@@ -19,6 +20,7 @@ Game::Game(QWidget *parent)
     createConnections();
     createContainer();
     createStyleSheet();
+    init();
 }
 
 
@@ -121,4 +123,11 @@ void Game::createStyleSheet()
     m_mainContent->setStyleSheet("QLabel{color: red;}"
                                  "QMessageBox{color: black;}");
     resize(WIDTH, HEIGHT);
+}
+
+void Game::init()
+{
+    setWindowIcon(QIcon(":/images/icon"));
+    setMaximumSize(QSize(300, 325));
+    setMinimumSize(QSize(300, 325));
 }

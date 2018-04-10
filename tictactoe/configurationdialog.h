@@ -3,9 +3,10 @@
 
 #include <QDialog>
 
-namespace Ui {
-class ConfigurationDialog;
-}
+class QLabel;
+class QDialogButtonBox;
+class QLineEdit;
+class QPushButton;
 
 class ConfigurationDialog : public QDialog
 {
@@ -19,11 +20,22 @@ public:
     void setPlayer2Name(const QString &p2name);
     QString player1Name() const;
     QString player2Name() const;
-private:
-    Ui::ConfigurationDialog *ui;
 
 public slots:
     void updateOKButtonState();
+
+private:
+	QLineEdit *m_player1NameEdit;
+	QLineEdit *m_player2NameEdit;
+	QLabel *m_player1Label;
+	QLabel *m_player2Label;
+	QPushButton *m_AcceptButton;
+	
+	
+	void createWidgets();
+	void createLayouts();
+	void createConnections();
+	void translateUi();
 };
 
 #endif // CONFIGURATIONDIALOG_H

@@ -6,230 +6,197 @@
     <message>
         <location filename="breakout/breakout.cpp" line="68"/>
         <source>Do you want again?</source>
-        <translation>Do you want again?</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="breakout/breakout.cpp" line="297"/>
         <source>Yes</source>
-        <translation>Yes</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="breakout/breakout.cpp" line="305"/>
         <source>No</source>
-        <translation>Nie</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>ConfigurationDialog</name>
     <message>
-        <location filename="configurationdialog.ui" line="14"/>
-        <source>Dialog</source>
-        <translation>Dialog</translation>
+        <location filename="tictactoe/configurationdialog.cpp" line="84"/>
+        <source>Player1: </source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="configurationdialog.ui" line="47"/>
-        <source>Player1 Name</source>
-        <translation>Player1 Name</translation>
+        <location filename="tictactoe/configurationdialog.cpp" line="85"/>
+        <source>Player2: </source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="configurationdialog.ui" line="54"/>
-        <source>Player2 Name</source>
-        <translation>Nazwa Gracz 2</translation>
+        <location filename="tictactoe/configurationdialog.cpp" line="86"/>
+        <source>OK</source>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>GameMenu</name>
     <message>
-        <location filename="gamemenu.cpp" line="12"/>
+        <location filename="gamemenu.cpp" line="51"/>
         <source>TicTacToe</source>
-        <translation>TicTacToe</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="gamemenu.cpp" line="19"/>
+        <location filename="gamemenu.cpp" line="52"/>
         <source>Arcanoid</source>
-        <translation>Arcanoid</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="gamemenu.cpp" line="25"/>
+        <location filename="gamemenu.cpp" line="53"/>
         <source>Snake</source>
-        <translation>Snake</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="gamemenu.cpp" line="31"/>
+        <location filename="gamemenu.cpp" line="54"/>
         <source>Back</source>
-        <translation>Back</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="tictactoe.ui" line="14"/>
-        <source>MainWindow</source>
-        <translation>MainWindow</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="33"/>
-        <location filename="tictactoe.ui" line="46"/>
-        <source>*******</source>
-        <translation>*******</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="71"/>
-        <source>File</source>
-        <translation>File</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="81"/>
-        <source>New Game</source>
-        <translation>New Game</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="84"/>
-        <source>Start new game</source>
-        <translation>Start new game</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="87"/>
-        <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="92"/>
-        <source>Quit</source>
-        <translation>Quit</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="95"/>
-        <source>Exit the program</source>
-        <translation>Exit the program</translation>
-    </message>
-    <message>
-        <location filename="tictactoe.ui" line="98"/>
-        <source>Ctrl+Q</source>
-        <translation>Ctrl+N</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>Options</name>
     <message>
-        <location filename="options.ui" line="20"/>
-        <source>Form</source>
-        <translation>Form</translation>
+        <location filename="options/options.cpp" line="63"/>
+        <source>Game Options</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="42"/>
-        <location filename="options.cpp" line="56"/>
-        <source>Options</source>
-        <translation>Options</translation>
-    </message>
-    <message>
-        <location filename="options.ui" line="55"/>
+        <location filename="options/options.cpp" line="64"/>
         <source>Languages:</source>
-        <translation>Languages:</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="66"/>
-        <source>Polski</source>
-        <translation>Polski</translation>
-    </message>
-    <message>
-        <location filename="options.ui" line="71"/>
+        <location filename="options/options.cpp" line="67"/>
         <source>English</source>
-        <translation>English</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="76"/>
-        <source>Deutche</source>
-        <translation>Deutsche</translation>
+        <location filename="options/options.cpp" line="68"/>
+        <source>Polski</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="81"/>
-        <source>Ruski</source>
-        <translation>Ruski</translation>
+        <location filename="options/options.cpp" line="69"/>
+        <source>Deutsch</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="94"/>
-        <location filename="options.cpp" line="63"/>
-        <source>1. W - up</source>
-        <translation>1.W - up</translation>
+        <location filename="options/options.cpp" line="70"/>
+        <source>русский</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="104"/>
-        <location filename="options.cpp" line="64"/>
-        <source>2. D - right</source>
-        <translation>2. D - right</translation>
+        <location filename="options/options.cpp" line="72"/>
+        <source>1.W - up</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="114"/>
-        <location filename="options.cpp" line="65"/>
-        <source>3. S - down</source>
-        <translation>3. S - down</translation>
+        <location filename="options/options.cpp" line="73"/>
+        <source>2.D - right</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="124"/>
-        <location filename="options.cpp" line="66"/>
-        <source>4. A - left</source>
-        <translation>4. A - left</translation>
+        <location filename="options/options.cpp" line="74"/>
+        <source>3.S - down</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="134"/>
-        <location filename="options.cpp" line="67"/>
-        <source>5. P - pause</source>
-        <translation>5. P - pause</translation>
+        <location filename="options/options.cpp" line="75"/>
+        <source>4.A - left</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="144"/>
-        <location filename="options.cpp" line="68"/>
-        <source>6. Space - start</source>
-        <translation>6. Space - start</translation>
+        <location filename="options/options.cpp" line="76"/>
+        <source>5.P - pause</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="options.ui" line="154"/>
-        <location filename="options.cpp" line="70"/>
+        <location filename="options/options.cpp" line="77"/>
+        <source>6.Space - start</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="options/options.cpp" line="79"/>
         <source>Back</source>
-        <translation>Back</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>Snake</name>
     <message>
         <location filename="snake/snake.cpp" line="54"/>
-        <location filename="snake/snake.cpp" line="235"/>
-        <source>Punkty : </source>
-        <translation>Points : </translation>
+        <location filename="snake/snake.cpp" line="236"/>
+        <source>Points : </source>
+        <oldsource>Punkty : </oldsource>
+        <translation></translation>
     </message>
     <message>
-        <location filename="snake/snake.cpp" line="111"/>
+        <location filename="snake/snake.cpp" line="112"/>
         <source>Do you want again?</source>
-        <translation>Do you want again?</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="snake/snake.cpp" line="287"/>
+        <location filename="snake/snake.cpp" line="288"/>
         <source>Yes</source>
-        <translation>Yes</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="snake/snake.cpp" line="296"/>
+        <location filename="snake/snake.cpp" line="297"/>
         <source>No</source>
-        <translation>No</translation>
+        <translation></translation>
     </message>
 </context>
 <context>
     <name>Theme</name>
     <message>
-        <location filename="theme.cpp" line="14"/>
-        <source>Start</source>
-        <translation>Start</translation>
+        <location filename="theme.cpp" line="80"/>
+        <source>Strart</source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="theme.cpp" line="20"/>
+        <location filename="theme.cpp" line="81"/>
         <source>Options</source>
-        <translation>Options</translation>
+        <translation></translation>
     </message>
     <message>
-        <location filename="theme.cpp" line="26"/>
+        <location filename="theme.cpp" line="82"/>
         <source>Quit</source>
-        <translation>Quit</translation>
+        <translation></translation>
+    </message>
+</context>
+<context>
+    <name>TictactoeWindow</name>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="56"/>
+        <source>New</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="57"/>
+        <source>Start</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="58"/>
+        <source>Quit</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="59"/>
+        <source>player1</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="tictactoe/tictactoewindow.cpp" line="60"/>
+        <source>player2</source>
+        <translation></translation>
     </message>
 </context>
 </TS>
