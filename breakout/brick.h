@@ -17,9 +17,9 @@ public:
     void setRect(QRect);
 
 private:
-    QImage image;
-    QRect rect;
-    bool destroyed;
+    QImage m_image;
+    QRect m_rect;
+    bool m_destroyed;
 };
 
 #endif // BRICK_H

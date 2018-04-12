@@ -35,19 +35,19 @@ protected:
     void victory();
 //nizeje jest nieposortowane
 private:
-    int x;
-    int timerId;
+    int m_x;
+    int m_timerId;
     static const int N_OF_BRICKS = 30;
     static const int DELAY = 10;
     static const int BOTTOM_EDGE = HEIGHT;//400
     static const int RIGHT_EDGE = WIDTH;//300
-    Ball *ball;
-    Paddle *paddle;
-    Brick* bricks[N_OF_BRICKS];
-    bool gameOver;
-    bool gameWon;
-    bool gameStarted;
-    bool paused;
+    Ball *m_ball;
+    Paddle *m_paddle;
+    Brick* m_bricks[N_OF_BRICKS];
+    bool m_gameOver;
+    bool m_gameWon;
+    bool m_gameStarted;
+    bool m_paused;
     void createButtons();
     QPushButton *m_againButton;
     QPushButton *m_exitButton;

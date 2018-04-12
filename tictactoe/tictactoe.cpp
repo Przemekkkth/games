@@ -24,9 +24,9 @@ void TicTacToe::setupBoard()
                                   QSizePolicy::Expanding);
             button->setText(" ");
             gridLayout->addWidget(button, row, column);
-            board.append(button);
+            m_board.append(button);
 
-            mapper->setMapping(button, board.count() - 1);
+            mapper->setMapping(button, m_board.count() - 1);
             connect(button, SIGNAL(clicked(bool)), mapper, SLOT(map()));
         }
     }
@@ -39,18 +39,18 @@ void TicTacToe::initNewGame()
 {
     for(int i = 0; i < 9; ++i)
     {
-        board.at(i)->setText(" ");
+        m_board.at(i)->setText(" ");
     }
 }
 
 void TicTacToe::handleButtonClicked(int index)
 {
 
-    if(index < 0 || index >= board.size() )
+    if(index < 0 || index >= m_board.size() )
     {
         return;
     }
-    QPushButton *button = board.at(index);
+    QPushButton *button = m_board.at(index);
     if(button->text() != " ")
     {
         return;
@@ -93,35 +93,35 @@ TicTacToe::Player TicTacToe::checkWinCondition(int r, int c)
 
 bool TicTacToe::checkX()
 {
-    if( (board.at(0)->text() == "X") && (board.at(1)->text() == "X") && ((board.at(2)->text() == "X")) )
+    if( (m_board.at(0)->text() == "X") && (m_board.at(1)->text() == "X") && ((m_board.at(2)->text() == "X")) )
     {
         return true;
     }
-    if( (board.at(3)->text() == "X") && (board.at(4)->text() == "X") && ((board.at(5)->text() == "X")) )
+    if( (m_board.at(3)->text() == "X") && (m_board.at(4)->text() == "X") && ((m_board.at(5)->text() == "X")) )
     {
         return true;
     }
-    if( (board.at(6)->text() == "X") && (board.at(7)->text() == "X") && ((board.at(8)->text() == "X")) )
+    if( (m_board.at(6)->text() == "X") && (m_board.at(7)->text() == "X") && ((m_board.at(8)->text() == "X")) )
     {
         return true;
     }
-    if( (board.at(0)->text() == "X") && (board.at(3)->text() == "X") && ((board.at(6)->text() == "X")) )
+    if( (m_board.at(0)->text() == "X") && (m_board.at(3)->text() == "X") && ((m_board.at(6)->text() == "X")) )
     {
         return true;
     }
-    if( (board.at(1)->text() == "X") && (board.at(4)->text() == "X") && ((board.at(7)->text() == "X")) )
+    if( (m_board.at(1)->text() == "X") && (m_board.at(4)->text() == "X") && ((m_board.at(7)->text() == "X")) )
     {
         return true;
     }
-    if( (board.at(2)->text() == "X") && (board.at(5)->text() == "X") && ((board.at(8)->text() == "X")) )
+    if( (m_board.at(2)->text() == "X") && (m_board.at(5)->text() == "X") && ((m_board.at(8)->text() == "X")) )
     {
         return true;
     }
-    if( (board.at(0)->text() == "X") && (board.at(4)->text() == "X") && ((board.at(8)->text() == "X")) )
+    if( (m_board.at(0)->text() == "X") && (m_board.at(4)->text() == "X") && ((m_board.at(8)->text() == "X")) )
     {
         return true;
     }
-    if( (board.at(2)->text() == "X") && (board.at(4)->text() == "X") && ((board.at(6)->text() == "X")) )
+    if( (m_board.at(2)->text() == "X") && (m_board.at(4)->text() == "X") && ((m_board.at(6)->text() == "X")) )
     {
         return true;
     }
@@ -130,35 +130,35 @@ bool TicTacToe::checkX()
 
 bool TicTacToe::checkO()
 {
-    if( (board.at(0)->text() == "O") && (board.at(1)->text() == "O") && ((board.at(2)->text() == "O")) )
+    if( (m_board.at(0)->text() == "O") && (m_board.at(1)->text() == "O") && ((m_board.at(2)->text() == "O")) )
     {
         return true;
     }
-    if( (board.at(3)->text() == "O") && (board.at(4)->text() == "O") && ((board.at(5)->text() == "O")) )
+    if( (m_board.at(3)->text() == "O") && (m_board.at(4)->text() == "O") && ((m_board.at(5)->text() == "O")) )
     {
         return true;
     }
-    if( (board.at(6)->text() == "O") && (board.at(7)->text() == "O") && ((board.at(8)->text() == "O")) )
+    if( (m_board.at(6)->text() == "O") && (m_board.at(7)->text() == "O") && ((m_board.at(8)->text() == "O")) )
     {
         return true;
     }
-    if( (board.at(0)->text() == "O") && (board.at(3)->text() == "O") && ((board.at(6)->text() == "O")) )
+    if( (m_board.at(0)->text() == "O") && (m_board.at(3)->text() == "O") && ((m_board.at(6)->text() == "O")) )
     {
         return true;
     }
-    if( (board.at(1)->text() == "O") && (board.at(4)->text() == "O") && ((board.at(7)->text() == "O")) )
+    if( (m_board.at(1)->text() == "O") && (m_board.at(4)->text() == "O") && ((m_board.at(7)->text() == "O")) )
     {
         return true;
     }
-    if( (board.at(2)->text() == "O") && (board.at(5)->text() == "O") && ((board.at(8)->text() == "O")) )
+    if( (m_board.at(2)->text() == "O") && (m_board.at(5)->text() == "O") && ((m_board.at(8)->text() == "O")) )
     {
         return true;
     }
-    if( (board.at(0)->text() == "O") && (board.at(4)->text() == "O") && ((board.at(8)->text() == "O")) )
+    if( (m_board.at(0)->text() == "O") && (m_board.at(4)->text() == "O") && ((m_board.at(8)->text() == "O")) )
     {
         return true;
     }
-    if( (board.at(2)->text() == "O") && (board.at(4)->text() == "O") && ((board.at(6)->text() == "O")) )
+    if( (m_board.at(2)->text() == "O") && (m_board.at(4)->text() == "O") && ((m_board.at(6)->text() == "O")) )
     {
         return true;
     }
@@ -170,23 +170,23 @@ bool TicTacToe::checkDraw()
 {
     if(
 
-            ((board.at(0)->text() == "O") || (board.at(0)->text() == "X"))
+            ((m_board.at(0)->text() == "O") || (m_board.at(0)->text() == "X"))
             &&
-            ((board.at(1)->text() == "O") || (board.at(1)->text() == "X"))
+            ((m_board.at(1)->text() == "O") || (m_board.at(1)->text() == "X"))
             &&
-            ((board.at(2)->text() == "O") || (board.at(2)->text() == "X"))
+            ((m_board.at(2)->text() == "O") || (m_board.at(2)->text() == "X"))
             &&
-            ((board.at(3)->text() == "O") || (board.at(3)->text() == "X"))
+            ((m_board.at(3)->text() == "O") || (m_board.at(3)->text() == "X"))
             &&
-            ((board.at(4)->text() == "O") || (board.at(4)->text() == "X"))
+            ((m_board.at(4)->text() == "O") || (m_board.at(4)->text() == "X"))
             &&
-            ((board.at(5)->text() == "O") || (board.at(5)->text() == "X"))
+            ((m_board.at(5)->text() == "O") || (m_board.at(5)->text() == "X"))
             &&
-            ((board.at(6)->text() == "O") || (board.at(6)->text() == "X"))
+            ((m_board.at(6)->text() == "O") || (m_board.at(6)->text() == "X"))
             &&
-            ((board.at(7)->text() == "O") || (board.at(7)->text() == "X"))
+            ((m_board.at(7)->text() == "O") || (m_board.at(7)->text() == "X"))
             &&
-            ((board.at(8)->text() == "O") || (board.at(8)->text() == "X"))
+            ((m_board.at(8)->text() == "O") || (m_board.at(8)->text() == "X"))
       )
     {
 

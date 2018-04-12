@@ -3,9 +3,9 @@
 
 Paddle::Paddle()
 {
-    dx = 0;
-    image.load(":/images/paddle");
-    rect = image.rect();
+    m_dx = 0;
+    m_image.load(":/images/paddle");
+    m_rect = m_image.rect();
     resetState();
 }
 
@@ -16,34 +16,34 @@ Paddle::~Paddle()
 
 void Paddle::setDx(int x)
 {
-    dx = x;
+    m_dx = x;
 }
 
 void Paddle::move()
 {
-    int x = rect.x() + dx;
-    int y = rect.top();
-    if(x+rect.width() > RIGHT_EDGE){
-        x-= (rect.width()/8);
+    int x = m_rect.x() + m_dx;
+    int y = m_rect.top();
+    if(x+m_rect.width() > RIGHT_EDGE){
+        x-= (m_rect.width()/8);
     }
     if(x < 0)
     {
-        x+=(rect.width()/8);
+        x+=(m_rect.width()/8);
     }
-    rect.moveTo(x, y);
+    m_rect.moveTo(x, y);
 }
 
 void Paddle::resetState()
 {
-    rect.moveTo(INITIAL_X-rect.width(), INITIAL_Y);
+    m_rect.moveTo(INITIAL_X-m_rect.width(), INITIAL_Y);
 }
 
 QRect Paddle::getRect()
 {
-    return rect;
+    return m_rect;
 }
 
 QImage& Paddle::getImage()
 {
-    return image;
+    return m_image;
 }

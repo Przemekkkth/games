@@ -3,10 +3,10 @@
 
 Brick::Brick(int x, int y)
 {
-    image.load(":/images/brickie");
-    destroyed = false;
-    rect = image.rect();
-    rect.translate(x, y);
+    m_image.load(":/images/brickie");
+    m_destroyed = false;
+    m_rect = m_image.rect();
+    m_rect.translate(x, y);
 }
 
 Brick::~Brick()
@@ -16,25 +16,25 @@ Brick::~Brick()
 
 QRect Brick::getRect()
 {
-    return rect;
+    return m_rect;
 }
 
 void Brick::setRect(QRect rct)
 {
-    rect = rct;
+    m_rect = rct;
 }
 
 QImage& Brick::getImage()
 {
-    return image;
+    return m_image;
 }
 
 bool Brick::isDestroyed()
 {
-    return destroyed;
+    return m_destroyed;
 }
 
 void Brick::setDestroyed(bool destr)
 {
-    destroyed = destr;
+    m_destroyed = destr;
 }

@@ -35,32 +35,32 @@ Snake::~Snake()
 
 void Snake::loadImages()
 {
-    dot.load(":/images/dot");
-    head.load(":/images/head");
-    apple.load(":/images/apple");
+    m_dot.load(":/images/dot");
+    m_head.load(":/images/head");
+    m_apple.load(":/images/apple");
 }
 
 void Snake::initGame()
 {
     m_exitButton->hide();
     m_againButton->hide();
-    inGame = true;
+    m_inGame = true;
     m_paused = false;
-    leftDirection = false;
-    rightDirection = true;
-    upDirection = false;
-    downDirection = false;
-    dots = 3;
-    m_pointsLabel->setText(tr("Points : ")+QString::number((dots-3)*10));
-    for(int z = 0; z < dots; z++)
+    m_leftDirection = false;
+    m_rightDirection = true;
+    m_upDirection = false;
+    m_downDirection = false;
+    m_dots = 3;
+    m_pointsLabel->setText(tr("Points : ")+QString::number((m_dots-3)*10));
+    for(int z = 0; z < m_dots; z++)
     {
-        x[z] = 50 - z * 10;
-        y[z] = 50;
+        m_x[z] = 50 - z * 10;
+        m_y[z] = 50;
     }
 
     locateApple();
 
-    timerId = startTimer(DELAY);
+    m_timerId = startTimer(DELAY);
 }
 
 void Snake::paintEvent(QPaintEvent *)
@@ -75,17 +75,17 @@ void Snake::doDrawing()
     qp.setBrush(QBrush(Qt::black));
     qp.drawRect(-10, -10 , rect().width() + 10, rect().height() + 10);
 
-    if(inGame)
+    if(m_inGame)
     {
-        qp.drawImage(apple_x, apple_y , apple);
+        qp.drawImage(m_apple_x, m_apple_y , m_apple);
 
-        for(int z = 0; z < dots; z++)
+        for(int z = 0; z < m_dots; z++)
         {
             if(z == 0)
-                qp.drawImage(x[z], y[z], head);
+                qp.drawImage(m_x[z], m_y[z], m_head);
             else
             {
-                qp.drawImage(x[z], y[z], dot);
+                qp.drawImage(m_x[z], m_y[z], m_dot);
             }
         }
 
@@ -117,7 +117,7 @@ void Snake::gameOver(QPainter &qp)
     m_exitButton->show();
     m_exitButton->setGeometry(w/2 + 40, h/2 + 2* fm.height() + 2, 40, 20);
 
-    if(inGame)
+    if(m_inGame)
     {
         return;
     }
@@ -126,34 +126,34 @@ void Snake::gameOver(QPainter &qp)
 void Snake::keyPressEvent(QKeyEvent *event)
 {
     int key = event->key();
-    if((key == Qt::Key_A) && (!rightDirection))
+    if((key == Qt::Key_A) && (!m_rightDirection))
     {
 
-        leftDirection = true;
-        upDirection = false;
-        downDirection = false;
+        m_leftDirection = true;
+        m_upDirection = false;
+        m_downDirection = false;
     }
 
-    if((key == Qt::Key_D) && (!leftDirection))
+    if((key == Qt::Key_D) && (!m_leftDirection))
     {
 
-        rightDirection = true;
-        upDirection = false;
-        downDirection = false;
+        m_rightDirection = true;
+        m_upDirection = false;
+        m_downDirection = false;
     }
 
-    if((key == Qt::Key_S) && (!upDirection))
+    if((key == Qt::Key_S) && (!m_upDirection))
     {
-        downDirection = true;
-        leftDirection = false;
-        rightDirection = false;
+        m_downDirection = true;
+        m_leftDirection = false;
+        m_rightDirection = false;
     }
 
-    if((key == Qt::Key_W) && (!downDirection))
+    if((key == Qt::Key_W) && (!m_downDirection))
     {
-        upDirection = true;
-        leftDirection = false;
-        rightDirection = false;
+        m_upDirection = true;
+        m_leftDirection = false;
+        m_rightDirection = false;
     }
 
 
@@ -178,15 +178,15 @@ void Snake::locateApple()
     qsrand((uint) time.msec());
 
     int r = qrand() % RAND_POS;
-    apple_x = (r*DOT_SIZE);
+    m_apple_x = (r*DOT_SIZE);
 
     r = qrand() % RAND_POS;
-    apple_y = (r * DOT_SIZE);
+    m_apple_y = (r * DOT_SIZE);
 }
 
 void Snake::timerEvent(QTimerEvent *)
 {
-    if(inGame) {
+    if(m_inGame) {
             move();
             checkCollision();
             checkApple();
@@ -199,26 +199,26 @@ void Snake::timerEvent(QTimerEvent *)
 
 void Snake::move()
 {
-    for(int z = dots; z > 0; z--)
+    for(int z = m_dots; z > 0; z--)
     {
-        x[z] = x[(z - 1)];
-        y[z] = y[(z - 1)];
+        m_x[z] = m_x[(z - 1)];
+        m_y[z] = m_y[(z - 1)];
     }
-    if(leftDirection)
+    if(m_leftDirection)
     {
-        x[0]-= DOT_SIZE;
+        m_x[0]-= DOT_SIZE;
     }
-    if(rightDirection)
+    if(m_rightDirection)
     {
-        x[0] += DOT_SIZE;
+        m_x[0] += DOT_SIZE;
     }
-    if(upDirection)
+    if(m_upDirection)
     {
-        y[0] -= DOT_SIZE;
+        m_y[0] -= DOT_SIZE;
     }
-    if(downDirection)
+    if(m_downDirection)
     {
-        y[0] += DOT_SIZE;
+        m_y[0] += DOT_SIZE;
     }
 
 
@@ -226,58 +226,58 @@ void Snake::move()
 
 void Snake::checkCollision()
 {
-    for(int z = dots; z > 0; z--)
+    for(int z = m_dots; z > 0; z--)
     {
-        if((z > 4) && (x[0] == x[z]) && (y[0]==y[z]))
+        if((z > 4) && (m_x[0] == m_x[z]) && (m_y[0]==m_y[z]))
         {
-            inGame = false;
+            m_inGame = false;
         }
     }
-    m_pointsLabel->setText(tr("Points : ")+QString::number((dots-3)*10));
-    if(x[0] > B_WIDTH)
+    m_pointsLabel->setText(tr("Points : ")+QString::number((m_dots-3)*10));
+    if(m_x[0] > B_WIDTH)
     {
-        inGame = false;
+        m_inGame = false;
     }
 
-    if(x[0] < 0)
+    if(m_x[0] < 0)
     {
-        inGame = false;
+        m_inGame = false;
     }
 
-    if(y[0] > B_HEIGHT)
+    if(m_y[0] > B_HEIGHT)
     {
-        inGame = false;
+        m_inGame = false;
     }
-    if(y[0] < 0)
+    if(m_y[0] < 0)
     {
-        inGame = false;
+        m_inGame = false;
     }
 
-    if(!inGame)
+    if(!m_inGame)
     {
-        killTimer(timerId);
+        killTimer(m_timerId);
     }
 }
 
 void Snake::checkApple()
 {
-    if((x[0] == apple_x ) && (y[0] == apple_y))
+    if((m_x[0] == m_apple_x ) && (m_y[0] == m_apple_y))
     {
-        dots++;
+        m_dots++;
         locateApple();
     }
 }
 
 void Snake::stopGame()
 {
-    killTimer(timerId);
+    killTimer(m_timerId);
    // inGame = false;
 }
 
 void Snake::startGame()
 {
-    timerId = startTimer(DELAY);
-    inGame = true;
+    m_timerId = startTimer(DELAY);
+    m_inGame = true;
 
 }
 
@@ -329,12 +329,12 @@ void Snake::pauseGame()
 {
     if(m_paused)
     {
-        timerId = startTimer(DELAY);
+        m_timerId = startTimer(DELAY);
         m_paused = false;
     }
     else
     {
         m_paused = true;
-        killTimer(timerId);
+        killTimer(m_timerId);
     }
 }

@@ -27,9 +27,9 @@ protected:
     void keyPressEvent(QKeyEvent *);
 
 private:
-    QImage dot;
-    QImage head;
-    QImage apple;
+    QImage m_dot;
+    QImage m_head;
+    QImage m_apple;
 
     static const int B_WIDTH = 300;
     static const int B_HEIGHT = 300;
@@ -38,19 +38,19 @@ private:
     static const int RAND_POS = 29;
     int DELAY = 140;
 
-    int timerId;
-    int dots;
-    int apple_x;
-    int apple_y;
+    int m_timerId;
+    int m_dots;
+    int m_apple_x;
+    int m_apple_y;
 
-    int x[ALL_DOTS];
-    int y[ALL_DOTS];
+    int m_x[ALL_DOTS];
+    int m_y[ALL_DOTS];
 
-    bool leftDirection;
-    bool rightDirection;
-    bool upDirection;
-    bool downDirection;
-    bool inGame;
+    bool m_leftDirection;
+    bool m_rightDirection;
+    bool m_upDirection;
+    bool m_downDirection;
+    bool m_inGame;
     bool m_paused;
 
     void loadImages();

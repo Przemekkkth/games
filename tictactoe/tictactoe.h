@@ -34,7 +34,7 @@ signals:
 public slots:
     void handleButtonClicked(int);
 private:
-    QList<QPushButton*> board;
+    QList<QPushButton*> m_board;
     void setupBoard();
 
     TicTacToe::Player checkWinCondition(int r, int c);
