@@ -130,4 +130,5 @@ void Game::init()
     setWindowIcon(QIcon(":/images/icon"));
     setMaximumSize(QSize(300, 325));
     setMinimumSize(QSize(300, 325));
+    setWindowTitle("Games");
 }
