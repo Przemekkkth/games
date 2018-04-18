@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-
+//game
 #include <QWidget>
 #include <QPaintEvent>
 class Theme;
