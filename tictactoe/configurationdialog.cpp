@@ -41,7 +41,7 @@ QString ConfigurationDialog::player1Name() const
 
 QString ConfigurationDialog::player2Name() const
 {
-    return m_player1NameEdit->text();
+    return m_player2NameEdit->text();
 }
 
 void ConfigurationDialog::updateOKButtonState()
@@ -90,4 +90,5 @@ void ConfigurationDialog::createConnections()
 {
 	connect(m_player1NameEdit, SIGNAL(textChanged(QString)), this, SLOT(updateOKButtonState()));
     connect(m_player2NameEdit, SIGNAL(textChanged(QString)), this, SLOT(updateOKButtonState()));
+    connect(m_AcceptButton, SIGNAL(clicked(bool)), this , SLOT(accept()));
 }

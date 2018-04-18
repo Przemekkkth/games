@@ -74,16 +74,16 @@ TictactoeWindow::~TictactoeWindow()
 void TictactoeWindow::startNewGame()
 {
     ConfigurationDialog dlg(this);
-    if(dlg.exec() == QDialog::Rejected)
+    if(dlg.exec() == QDialog::Accepted)
     {
-
+        m_player1Label->setText(dlg.player1Name());
+        m_player2Label->setText(dlg.player2Name());
+        m_tictactoeWidget->initNewGame();
+        m_tictactoeWidget->setEnabled(true);
         return;
     }
 
-    m_player1Label->setText(dlg.player1Name());
-    m_player2Label->setText(dlg.player2Name());
-    m_tictactoeWidget->initNewGame();
-    m_tictactoeWidget->setEnabled(true);
+
 }
 
 void TictactoeWindow::updateNameLabels() {
