@@ -8,7 +8,8 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Snake1
+TARGET = games
+
 TEMPLATE = app
 
 TRANSLATIONS += en_EN.ts \
